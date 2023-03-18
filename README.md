@@ -57,6 +57,13 @@ var md = require('markdown-it')()
 md.render('>>>\nThis is a quote\n>>>') // => '<blockquote><p>This is a quote</p></blockquote>'
 ```
 
+You can enable/disable the plugin:
+
+```js
+md.enable('container_multiline_blockquote');
+md.disable('container_multiline_blockquote');
+```
+
 _Differences in browser._ If you load script directly into the page, without
 a package system, the module will add itself globally as `window.markdownitInjectLinenumbers`.
 

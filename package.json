@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-glfm-multline-blockquote",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Plugin to add GitLab Flavored Markdown multiline blockquotes for markdown-it",
   "keywords": [
     "markdown-it-plugin",

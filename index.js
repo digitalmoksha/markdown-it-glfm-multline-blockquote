@@ -7,7 +7,7 @@ module.exports = function multiline_blockquote_plugin(md) {
   //
   // Uses the `markdown-it-container` plugin to do the actual container
   // detection.
-  md.use(require('markdown-it-container'), 'blockquote', {
+  md.use(require('markdown-it-container'), 'multiline_blockquote', {
     marker: '>',
     validate: function (params/*, markup*/) {
       return params.trim().length === 0;
