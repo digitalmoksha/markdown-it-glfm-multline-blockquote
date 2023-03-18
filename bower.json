@@ -1,0 +1,29 @@
+{
+  "name": "markdown-it-glfm-multline-blockquote",
+  "main": "dist/markdown-it-glfm-multline-blockquote.js",
+  "homepage": "https://github.com/digitalmoksha/markdown-it-glfm-multline-blockquote",
+  "description": "Plugin to add GitLab Flavored Markdown multiline blockquotes for markdown-it",
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "GLFM",
+    "GitLab Flavored Markdown",
+    "multiline blockquote"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "benchmark",
+    "bower_components",
+    "coverage",
+    "demo",
+    "docs",
+    "lib",
+    "node_modules",
+    "support",
+    "test",
+    "Makefile",
+    "index*"
+  ]
+}

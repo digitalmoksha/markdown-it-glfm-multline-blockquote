@@ -1,0 +1,268 @@
+Simple container
+.
+>>>
+*content*
+>>>
+.
+<blockquote>
+<p><em>content</em></p>
+</blockquote>
+.
+
+
+Could contain block elements too
+.
+>>>
+### heading
+
+-----------
+>>>
+.
+<blockquote>
+<h3>heading</h3>
+<hr>
+</blockquote>
+.
+
+
+Ending marker could be longer
+.
+>>>>>>
+  hello world
+>>>>>>>>>>>
+.
+<blockquote>
+<p>hello world</p>
+</blockquote>
+.
+
+
+Nested blocks
+.
+>>>>>
+>>>>
+xxx
+>>>>
+>>>>>
+.
+<blockquote>
+<blockquote>
+<p>xxx</p>
+</blockquote>
+</blockquote>
+.
+
+Incorrectly nested blocks
+.
+>>>>
+this block is closed with 5 markers below
+
+>>>>>
+
+auto-closed blocks
+>>>>>
+>>>>
+.
+<blockquote>
+<p>this block is closed with 5 markers below</p>
+</blockquote>
+<p>auto-closed blocks</p>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+.
+
+
+Marker could be indented up to 3 spaces
+.
+   >>>
+   content
+    >>>
+   >>>
+.
+<blockquote>
+<p>content
+&gt;&gt;&gt;</p>
+</blockquote>
+.
+
+
+But that's a code block
+.
+    >>>
+    content
+    >>>
+.
+<pre><code>&gt;&gt;&gt;
+content
+&gt;&gt;&gt;
+</code></pre>
+.
+
+
+Some more indent checks
+.
+  >>>
+   not a code block
+
+    code block
+  >>>
+.
+<blockquote>
+<p>not a code block</p>
+<pre><code>code block
+</code></pre>
+</blockquote>
+.
+
+
+But closing marker can't
+.
+>>>
+xxx
+>>> arg=123
+.
+<blockquote>
+<p>xxx</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>arg=123</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+.
+
+
+Blockquotes self-close at the end of the document
+.
+>>>
+xxx
+.
+<blockquote>
+<p>xxx</p>
+</blockquote>
+.
+
+
+They should terminate paragraphs
+.
+blah blah
+>>>
+content
+>>>
+.
+<p>blah blah</p>
+<blockquote>
+<p>content</p>
+</blockquote>
+.
+
+
+They can be nested in lists
+.
+ -  >>>
+    - xxx
+    >>>
+.
+<ul>
+<li>
+<blockquote>
+<ul>
+<li>xxx</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+.
+
+
+Or in blockquotes
+.
+> >>>
+> xxx
+>> yyy
+> zzz
+> >>>
+.
+<blockquote>
+<blockquote>
+<p>xxx</p>
+<blockquote>
+<p>yyy
+zzz</p>
+</blockquote>
+</blockquote>
+</blockquote>
+.
+
+
+List indentation quirks
+.
+ -  >>>
+    xxx
+    yyy
+   >>>
+
+ -  >>>
+    xxx
+   yyy
+   >>>
+.
+<ul>
+<li>
+<blockquote>
+<p>xxx
+yyy</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<blockquote>
+<p>xxx</p>
+</blockquote>
+</li>
+</ul>
+<p>yyy</p>
+</blockquote>
+.
+
+
+Double `>>>` inside code block:
+.
+```txt
+# Code
+>>>
+# Code
+>>>
+# Code
+```
+.
+<pre><code class="language-txt"># Code
+&gt;&gt;&gt;
+# Code
+&gt;&gt;&gt;
+# Code
+</code></pre>
+.
+
+Does not require a leading or trailing blank line
+
+.
+Some text
+>>>
+A quote
+>>>
+Some other text
+.
+<p>Some text</p>
+<blockquote>
+<p>A quote</p>
+</blockquote>
+<p>Some other text</p>
+.
+

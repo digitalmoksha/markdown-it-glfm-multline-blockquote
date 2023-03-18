@@ -1,0 +1,40 @@
+{
+  "name": "markdown-it-glfm-multline-blockquote",
+  "version": "0.1.0",
+  "description": "Plugin to add GitLab Flavored Markdown multiline blockquotes for markdown-it",
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "GLFM",
+    "GitLab Flavored Markdown",
+    "multiline blockquote"
+  ],
+  "homepage": "https://github.com/digitalmoksha/markdown-it-glfm-multline-blockquote",
+  "repository": "digitalmoksha/markdown-it-glfm-multline-blockquote",
+  "bugs": {
+    "url": "https://github.com/digitalmoksha/markdown-it-glfm-multline-blockquote/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && nyc mocha",
+    "coverage": "npm run test && nyc report --reporter html",
+    "report-coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "markdown-it": "markdown-it/markdown-it",
+    "markdown-it-container": "markdown-it/markdown-it-container"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^8.36.0",
+    "markdown-it": "markdown-it/markdown-it",
+    "markdown-it-testgen": "~0.1.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "terser": "^5.16.6"
+  }
+}
