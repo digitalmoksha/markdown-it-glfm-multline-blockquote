@@ -25,6 +25,20 @@ gives
 </blockquote>
 ```
 
+As it follows the CommonMark fenced code block rules, you can embed blockquotes within blockquotes:
+
+```
+- item 1
+
+  >>>>
+  Quoting another quote
+
+  >>>
+  second quote
+  >>>
+  >>>>
+```
+
 ## Install
 
 node.js, browser:
